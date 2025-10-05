@@ -132,7 +132,11 @@
         display: inline-block;
         margin: 3px 0;
       }
-
+@media only screen and (max-width: 768px) {
+    body {
+        background-image: url('images/bg2.png');
+    }
+}
       /* ---------- Responsive Rules ---------- */
       @media (max-width: 1024px) {
         .main-section {
@@ -140,9 +144,9 @@
         }
 
         .multi-column-list {
-          columns: 2;
-          -webkit-columns: 2;
-          -moz-columns: 2;
+          columns: 1;
+          -webkit-columns: 1;
+          -moz-columns: 1;
         }
 
         .title {
