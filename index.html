@@ -1,97 +1,194 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice Dashboard</title>
     <style>
-.icon-container {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
-}
-
-.icon {
-  height: auto;
-  width: 100%;           /* let them grow/shrink */
-  max-width: 50px;       /* limit the size */
-  object-fit: contain;
-  flex: 1 1 auto;         /* grow and shrink */
-  border-radius: 15px;
-}
+      /* ---------- Navbar ---------- */
       nav.navbar {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 10px;
+        padding: 10px 20px;
         background-color: rgba(31, 215, 28, 0.942);
       }
 
-body{
-  background-image: url("https://wallpapercave.com/uwp/uwp1562189.jpeg");
-  background-repeat: no-repeat;
-  background-attachment: fixed; 
-  background-size: 100% 100%;
-  background-blend-mode:overlay;
-  color:white;
-  font-size: 20px;
-}
-
       .title {
         font-size: 50px;
+        font-weight: bold;
+      }
+
+      .icon-container {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        gap: 10px;
+      }
+
+      .icon {
+        width: 50px;
+        height: auto;
+        object-fit: contain;
+        border-radius: 15px;
+      }
+
+      /* ---------- Body & Background ---------- */
+      body {
+        background-image: url("https://wallpapercave.com/uwp/uwp1562189.jpeg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        background-blend-mode: overlay;
+        color: white;
+        font-size: 20px;
+        margin: 0;
+        padding: 0 30px 60px 30px;
+      }
+
+      strong {
+        font-size: 28px;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      ol {
+        padding-left: 25px;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
+      /* ---------- Main Layout ---------- */
+      .main-section {
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+        flex-wrap: wrap;
+        margin-top: 40px;
+      }
+
+      .section-box {
+        flex: 1;
+        min-width: 280px;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+      }
+
+      /* ---------- Topics Multi-Column ---------- */
+      .topics-section {
+        margin-top: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+      }
+
+      .multi-column-list {
+        columns: 3;
+        -webkit-columns: 3;
+        -moz-columns: 3;
+        column-gap: 40px;
+        list-style-position: inside;
+      }
+
+      /* ---------- Responsive Rules ---------- */
+      @media (max-width: 1024px) {
+        .main-section {
+          flex-direction: column;
+        }
+
+        .multi-column-list {
+          columns: 2;
+          -webkit-columns: 2;
+          -moz-columns: 2;
+        }
+      }
+
+      .multi-column-list a {
+        display: inline-block;
+        margin: 3px 0;
       }
     </style>
   </head>
+
   <body>
+    <!-- Navbar -->
     <nav class="navbar">
       <div class="title">Practice</div>
       <div class="icon-container">
-        <a href="https://www.hackerrank.com/dashboard"><img class="icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxx0ITtLsKmjyFvZ71EjD19YXKzlxb6A5wQSiqyXDjNX0I4g_NWjGxq-qcn0_mU2VGqOc&usqp=CAU"></a>
-        <a href="https://codeforces.com/"><img class="icon" src="https://cdn-1.webcatalog.io/catalog/codeforces/codeforces-icon-filled-256.png?v=1714773964567"></a>
-        <a href="https://www.interviewbit.com/practice/"><img class="icon" src="https://static.ambitionbox.com/assets/v2/images/rs:fit:200:200:false:false/bG9jYWw6Ly8vbG9nb3Mvb3JpZ2luYWxzL2ludGVydmlld2JpdC5qcGc.webp"></a>
-        <a href="https://leetcode.com/problemset/"><img class="icon" src="https://avatars.githubusercontent.com/u/41718343?s=280&v=4"></a>
-        <!-- <a href="#"><img class="icon" src=""></a>
-        <a href="#"><img class="icon" src=""></a> -->
+        <a href="https://www.hackerrank.com/dashboard"
+          ><img
+            class="icon"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxx0ITtLsKmjyFvZ71EjD19YXKzlxb6A5wQSiqyXDjNX0I4g_NWjGxq-qcn0_mU2VGqOc&usqp=CAU"
+        /></a>
+        <a href="https://codeforces.com/"
+          ><img
+            class="icon"
+            src="https://cdn-1.webcatalog.io/catalog/codeforces/codeforces-icon-filled-256.png?v=1714773964567"
+        /></a>
+        <a href="https://www.interviewbit.com/practice/"
+          ><img
+            class="icon"
+            src="https://static.ambitionbox.com/assets/v2/images/rs:fit:200:200:false:false/bG9jYWw6Ly8vbG9nb3Mvb3JpZ2luYWxzL2ludGVydmlld2JpdC5qcGc.webp"
+        /></a>
+        <a href="https://leetcode.com/problemset/"
+          ><img
+            class="icon"
+            src="https://avatars.githubusercontent.com/u/41718343?s=280&v=4"
+        /></a>
       </div>
     </nav>
 
-    <br><br>
-    <div>
-    <div>
+    <!-- Main Content -->
+    <div class="main-section">
+      <!-- Jobs Section -->
+      <div class="section-box">
+        <strong>Jobs:</strong>
+        <ol>
+          <li>
+            <a href="https://www.naukri.com/mnjuser/homepage">Naukri</a>
+          </li>
+          <li>
+            <a href="https://www.foundit.in/seeker/dashboard">FoundIt</a>
+          </li>
+          <li><a href="https://unstop.com/">Unstop</a></li>
+          <li>
+            <a
+              href="https://cuvette.tech/app/student/jobs/fulltimeJobs/filters?sortByDate=true&minJobOffer=10"
+              >Cuvette</a
+            >
+          </li>
+        </ol>
+      </div>
+
+      <!-- Freelance Section -->
+      <div class="section-box">
+        <strong>Freelance:</strong>
+        <ol>
+          <li><a href="https://www.freelancer.in/dashboard">Freelancer</a></li>
+          <li><a href="https://www.upwork.com/nx/find-work/best-matches">Upwork</a></li>
+          <li><a href="https://www.fiverr.com/">Fiverr</a></li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Topics Section -->
+    <div class="topics-section">
       <strong>Topics:</strong>
-      <ol>
-        <li><a style="color:white" href="https://roadmap.sh/python">Python</a></li>
-        <li><a style="color:white" href="https://pwskills.com/dashboard/overview/">Data Science</a></li>
-        <li><a style="color:white" href="https://roadmap.sh/sql">MySQL</a></li>
-        <li><a style="color:white" href="https://roadmap.sh/mongodb">MongoDB</a></li>
+      <ol class="multi-column-list">
+        <li><a href="https://roadmap.sh/python">Python</a></li>
+        <li><a href="https://pwskills.com/dashboard/overview/">Data Science</a></li>
+        <li><a href="https://roadmap.sh/sql">MySQL</a></li>
+        <li><a href="https://roadmap.sh/mongodb">MongoDB</a></li>
         <li><a style="color:black" href="#">EH</a></li>
         <li><a style="color:black" href="https://roadmap.sh/backend">Backend</a></li>
+        <!-- Add more topics freely — columns adjust automatically -->
       </ol>
-    </div>
-
-    <div>
-      <strong>Jobs:</strong>
-      <ol>
-        <li><a style="color:white" href="https://www.naukri.com/mnjuser/homepage">Naukri</a></li>
-        <li><a style="color:white" href="https://www.foundit.in/seeker/dashboard">FoundIt</a></li>
-        <li><a style="color:white" href="https://unstop.com/">Unstop</a></li>
-        <li><a style="color:white" href="https://cuvette.tech/app/student/jobs/fulltimeJobs/filters?sortByDate=true&minJobOffer=10">Cuvette</a></li>
-        <!-- <li></li>
-        <li></li> -->
-      </ol>
-    </div>
-
-      <div>
-      <strong>Freelance:</strong>
-      <ol>
-        <li><a style="color:white" href="https://www.freelancer.in/dashboard">Freelancer</a></li>
-        <li><a style="color:white" href="https://www.upwork.com/nx/find-work/best-matches">Upwork</a></li>
-        <li><a style="color:white" href="https://www.fiverr.com/">Fiverr</a></li>
-        <!-- <li></li>
-        <li></li> -->
-      </ol>
-    </div>
-    </div>
-
-    <div>
-
-      
     </div>
   </body>
 </html>
